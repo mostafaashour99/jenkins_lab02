@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'ec2-agent'}
+    agent {label 'agent'}
 
     stages {
         stage('Cloning our Git') {
