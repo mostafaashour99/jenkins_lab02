@@ -1,0 +1,20 @@
+---
+- name: slave
+  hosts: all
+  become: yes
+  remote_user: ubuntu
+  tasks:
+    - name: create jenkins dir
+      file:
+            path: /home/ubuntu/jenkins_home
+            state: directory
+            mode: '0777'
+
+    - name: install java
+      apt:
+          name: openjdk-11-jdk
+          update_cache: true
+
+    - name: install git
+      apt:
+          name: git
